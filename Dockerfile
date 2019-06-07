@@ -15,4 +15,5 @@ RUN dotnet publish -c Release -o out
 FROM microsoft/dotnet:sdk AS runtime
 WORKDIR /app
 COPY --from=build /app/out ./
+EXPOSE 4512
 ENTRYPOINT ["dotnet", "e-commerce.webapi.dll"]
