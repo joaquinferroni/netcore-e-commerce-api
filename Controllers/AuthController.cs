@@ -50,7 +50,7 @@ namespace e_commerce.webapi.Controllers
                 var me = authService.Me((int)result.idCliente);
                 var tokeOptions = new JwtSecurityToken(
                     claims: new List<Claim>(){
-                            new Claim(ClaimTypes.Name,user.Login),
+                            new Claim(ClaimTypes.Name,result.idCliente.ToString()),
                             new Claim("IvaDetailed",me.IvaDetailed.ToString()),
                             new Claim(ClaimTypes.Role, "User"),
                             new Claim(ClaimTypes.Role, "Admin"),
